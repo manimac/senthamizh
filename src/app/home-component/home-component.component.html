@@ -1,1 +1,22 @@
-<p>home-component works!</p>
+<p id="test">home-component works!</p>
+{{studentName}}
+<div [innerHtml]="studentName"></div>
+<button (click)="toggleDiv()">Toggle</button>
+<div *ngIf="showDiv">
+    Division show / hide
+</div>
+
+<div [hidden]="showDiv">
+    Division show / hidden
+</div>
+
+<div *ngIf="val=='10'">
+    Value is 10
+</div>
+<div *ngIf="val=='20'">
+    Value is 20
+</div>
+<div>{{val}}</div>
+<!-- <input type="text" [(ngModel)]="val"> -->
+<input type="text" #test>
+<button (click)="checkVal(test.value)">Check</button>
