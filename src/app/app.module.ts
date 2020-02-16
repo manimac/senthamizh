@@ -7,6 +7,10 @@ import { AboutComponent } from './about/about.component';
 
 import { Routes, RouterModule} from '@angular/router';
 import{ FormsModule} from '@angular/forms';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { ToUpperCasePipe } from './to-upper-case.pipe';
+import { ConvertToDollarPipe } from './convert-to-dollar.pipe';
 
 const route: Routes = [
   {
@@ -14,6 +18,12 @@ const route: Routes = [
   },
   {
     path: 'about', component: AboutComponent
+  },
+  {
+    path: 'parent', component: ParentComponent
+  },
+  {
+    path: 'child', component: ChildComponent
   }
 ]
 
@@ -21,7 +31,11 @@ const route: Routes = [
   declarations: [
     AppComponent,
     Home,
-    AboutComponent
+    AboutComponent,
+    ParentComponent,
+    ChildComponent,
+    ToUpperCasePipe,
+    ConvertToDollarPipe
   ],
   imports: [
     BrowserModule,

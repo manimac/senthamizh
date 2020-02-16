@@ -1,5 +1,11 @@
+<style>
+    .active{
+        background:red;
+    }
+</style>
+{{price1|convertToDollar}}
 <p id="test">home-component works!</p>
-{{studentName}}
+{{studentName|toUpperCase}}
 <div [innerHtml]="studentName"></div>
 <button (click)="toggleDiv()">Toggle</button>
 <div *ngIf="showDiv">
@@ -20,3 +26,7 @@
 <!-- <input type="text" [(ngModel)]="val"> -->
 <input type="text" #test>
 <button (click)="checkVal(test.value)">Check</button>
+<button (click)="toggleClass()">Toggle class</button>
+<div [ngClass]="{'active':showClass}">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam debitis voluptas voluptatibus quaerat iusto velit ipsam voluptate qui alias distinctio possimus est veniam facilis, quam perspiciatis temporibus dolorum quod nobis.</div>
+<input type="text" [(ngModel)]="color" (change)="changeColor()">
+<div [ngStyle]="styleProp">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat enim incidunt tempora dicta, placeat, perspiciatis aspernatur facilis neque eum blanditiis repellendus iste sint quibusdam, magnam modi excepturi? Necessitatibus, obcaecati iste!</div>

@@ -7,10 +7,11 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 })
 export class Home {
 
+  color: string = 'yellow';
   val: any;
   private studentName: string = '<b>Rajiv</b>';
   showDiv = false;
-
+  price1 = 100;
   constructor() { }
 
   ngOnInit() {
@@ -28,4 +29,19 @@ export class Home {
     this.val = param;
   }
 
+  showClass = false;
+
+  toggleClass(){
+    this.showClass = !this.showClass;
+  }
+
+  styleProp = {
+    background: 'blue',
+    color: 'green',
+    fontSize: '23px'
+  }
+
+  changeColor(){
+    this.styleProp.background = this.color;
+  }
 }
