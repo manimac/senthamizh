@@ -13,6 +13,8 @@ import { ToUpperCasePipe } from './to-upper-case.pipe';
 import { ConvertToDollarPipe } from './convert-to-dollar.pipe';
 import { SearchFilterPipe } from './search-filter.pipe';
 
+import { HttpClientModule } from '@angular/common/Http';
+
 const route: Routes = [
   {
     path: 'home', component: Home
@@ -42,7 +44,8 @@ const route: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(route),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
