@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-
+import { CommonService } from '../services/common.service';
 @Component({
   selector: 'app-home-component',
   templateUrl: './home-component.component.html',
@@ -12,9 +12,13 @@ export class Home {
   private studentName: string = '<b>Rajiv</b>';
   showDiv = false;
   price1 = 100;
-  constructor() { }
+  serviceText;
+  constructor(private service1: CommonService) {
+    this.serviceText = this.service1.getValue();
+   }
 
   ngOnInit() {
+    
   }
 
   ngAfterViewInit(){

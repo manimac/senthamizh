@@ -11,6 +11,7 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { ToUpperCasePipe } from './to-upper-case.pipe';
 import { ConvertToDollarPipe } from './convert-to-dollar.pipe';
+import { SearchFilterPipe } from './search-filter.pipe';
 
 const route: Routes = [
   {
@@ -35,7 +36,8 @@ const route: Routes = [
     ParentComponent,
     ChildComponent,
     ToUpperCasePipe,
-    ConvertToDollarPipe
+    ConvertToDollarPipe,
+    SearchFilterPipe
   ],
   imports: [
     BrowserModule,
