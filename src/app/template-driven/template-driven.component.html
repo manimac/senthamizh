@@ -1,0 +1,13 @@
+<form #form="ngForm" (ngSubmit)="save(form.value)">
+    <div>
+        <input type="text" name="name" ngModel> Name
+    </div>
+    <div>
+        <input type="text" name="email" ngModel> Email
+    </div>
+    <div>
+        <input type="text" name="phone" ngModel> Phone
+    </div>
+    <button type="submit">Save</button>
+    <!-- <button type="button" (click)="save(form.value)">Save</button> -->
+</form>

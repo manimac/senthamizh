@@ -1,0 +1,35 @@
+<form [formGroup]="studentsForm">
+    <div>
+        <input type="text" formControlName="name"> Name
+    </div>
+    <div formGroupName="contact">
+        <div>
+            <input type="text" formControlName="email"> Email
+        </div>
+        <div>
+            <input type="text" formControlName="phone"> Phone
+        </div>
+    </div>
+    <button type="button" (click)="save()">Save</button>
+</form>
+
+<button (click)="clear()">Reset</button>
+
+
+<form [formGroup]="todoForm">
+        <div>
+            <input type="text" formControlName="userId"> User Id
+        </div>
+        <div>
+            <input type="text" formControlName="id"> Id
+        </div>
+        <div>
+            <input type="text" formControlName="title"> Title
+        </div>
+        <div>
+            <input type="text" formControlName="completed"> Completed
+        </div>
+        <button type="button" (click)="save()">Save</button>
+    </form>
+    
+    <button (click)="clear()">Reset</button>
