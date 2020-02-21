@@ -17,19 +17,19 @@
 
 
 <form [formGroup]="todoForm">
-        <div>
-            <input type="text" formControlName="userId"> User Id
-        </div>
-        <div>
-            <input type="text" formControlName="id"> Id
-        </div>
-        <div>
-            <input type="text" formControlName="title"> Title
-        </div>
-        <div>
-            <input type="text" formControlName="completed"> Completed
-        </div>
-        <button type="button" (click)="save()">Save</button>
-    </form>
-    
-    <button (click)="clear()">Reset</button>
+    <div>
+        <input type="text" formControlName="userId"> User Id
+    </div>
+    <div>
+        <input type="text" formControlName="id"> Id
+    </div>
+    <div>
+        <input type="text" formControlName="title"> Title
+    </div>
+    <div>
+        <input type="text" formControlName="completed"> Completed
+    </div>
+    <button type="button" (click)="save()">Save</button>
+</form>
+
+<button (click)="clear()">Reset</button>

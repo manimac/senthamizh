@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup,FormControl, Validators} from '@angular/forms';
-import {HttpClient} from '@angular/common/http';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-reactive-form',
   templateUrl: './reactive-form.component.html',
@@ -22,40 +22,40 @@ export class ReactiveFormComponent implements OnInit {
 
   ngOnInit() {
     this.studentsForm = new FormGroup({
-      name : new FormControl("", Validators.compose([Validators.required, Validators.minLength(2)])),
+      name: new FormControl("", Validators.compose([Validators.required, Validators.minLength(2)])),
       contact: new FormGroup({
-        email : new FormControl("", Validators.required),
-        phone : new FormControl("")
-      })      
+        email: new FormControl("", Validators.required),
+        phone: new FormControl("")
+      })
     })
     this.studentsForm.setValue(this.stu);
 
 
     this.todoForm = new FormGroup({
-      userId : new FormControl("", Validators.compose([Validators.required, Validators.minLength(2)])),
-      id : new FormControl("", Validators.compose([Validators.required, Validators.minLength(2)])),
-      title : new FormControl("", Validators.compose([Validators.required, Validators.minLength(2)])),
-      completed : new FormControl("", Validators.compose([Validators.required, Validators.minLength(2)])),
+      userId: new FormControl("", Validators.compose([Validators.required, Validators.minLength(2)])),
+      id: new FormControl("", Validators.compose([Validators.required, Validators.minLength(2)])),
+      title: new FormControl("", Validators.compose([Validators.required, Validators.minLength(2)])),
+      completed: new FormControl("", Validators.compose([Validators.required, Validators.minLength(2)])),
     })
-    
+
     this.loadData();
   }
 
-  save(){
+  save() {
     console.log(this.studentsForm.valid);
     console.log(this.studentsForm.value);
   }
 
-  clear(){
+  clear() {
     this.studentsForm.reset();
   }
 
-  loadData(){
+  loadData() {
     this.Http.get('https://jsonplaceholder.typicode.com/todos/1').subscribe(
-      (response)=>{
+      (response) => {
         this.todoForm.setValue(response);
       },
-      (error) =>{
+      (error) => {
 
       }
     )
