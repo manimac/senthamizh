@@ -16,7 +16,9 @@ import { SearchFilterPipe } from './search-filter.pipe';
 import { HttpClientModule } from '@angular/common/Http';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
-
+import { CustomDirectiveDirective } from './custom-directive.directive';
+import { DirectiveComponentComponent } from './directive-component/directive-component.component';
+import {LoginModuleModule} from './login-module/login-module.module';
 
 const route: Routes = [
   {
@@ -36,6 +38,9 @@ const route: Routes = [
   },
   {
     path: 'reactive-form', component: ReactiveFormComponent
+  },
+  {
+    path: 'directive', component: DirectiveComponentComponent
   }
 ]
 
@@ -50,14 +55,17 @@ const route: Routes = [
     ConvertToDollarPipe,
     SearchFilterPipe,
     TemplateDrivenComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    CustomDirectiveDirective,
+    DirectiveComponentComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(route),
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LoginModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
