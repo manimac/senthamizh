@@ -1,4 +1,11 @@
-<a routerLink="/home">Home</a>
-<a routerLink="/about">About</a>
+<style>
+    .active{
+        color: indigo;
+    }
+</style>
+
+
+<a routerLink="/home" [ngClass]="{'active':router.url=='/home'}">Home</a>
+<a routerLink="/about" [ngClass]="{'active':router.url=='/about/test1'}">About</a>
 <router-outlet></router-outlet>
 <!-- test test -->

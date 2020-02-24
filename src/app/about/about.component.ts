@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/Http';
 // import {CsvService} from 'angular2-json2csv'
-
+import { Router } from '@angular/router';
 
 import { ExportToCsv } from 'export-to-csv';
 
@@ -28,7 +28,7 @@ export class AboutComponent implements OnInit {
       age: '24'
     }
   ]
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient, private router: Router) { 
     this.loadPosts();
   }
 
