@@ -19,13 +19,19 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { CustomDirectiveDirective } from './custom-directive.directive';
 import { DirectiveComponentComponent } from './directive-component/directive-component.component';
 import {LoginModuleModule} from './login-module/login-module.module';
+import { TestComponent } from './test/test.component';
 
 const route: Routes = [
   {
     path: 'home', component: Home
   },
   {
-    path: 'about', component: AboutComponent
+    // path: 'about', component: AboutComponent
+    path:'about', children:[
+      {
+        path:'test1', component: AboutComponent
+      }
+    ]
   },
   {
     path: 'parent', component: ParentComponent
@@ -57,7 +63,8 @@ const route: Routes = [
     TemplateDrivenComponent,
     ReactiveFormComponent,
     CustomDirectiveDirective,
-    DirectiveComponentComponent
+    DirectiveComponentComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,

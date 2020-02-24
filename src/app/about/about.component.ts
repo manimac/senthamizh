@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/Http';
 // import {CsvService} from 'angular2-json2csv'
 
+
+import { ExportToCsv } from 'export-to-csv';
+
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -9,6 +12,7 @@ import { HttpClient } from '@angular/common/Http';
 })
 export class AboutComponent implements OnInit {
 
+  search: any;
   posts: any;
   students = [
     {
@@ -80,6 +84,26 @@ export class AboutComponent implements OnInit {
 
   }
 
-  
+  export(){
+
+    const options = { 
+      fieldSeparator: ',',
+      quoteStrings: '"',
+      decimalSeparator: '.',
+      showLabels: false, 
+      showTitle: true,
+      title: 'My CSV',
+      useTextFile: false,
+      useBom: true,
+      useKeysAsHeaders: true,
+      filename: 'test'
+      // headers: ['Column 1', 'Column 2', etc...] <-- Won't work with useKeysAsHeaders present!
+    };
+
+    const csvExporter = new ExportToCsv(options);
+ 
+    csvExporter.generateCsv(this.students);
+  }
+
 
 }

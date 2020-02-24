@@ -9,7 +9,7 @@ export class Home {
 
   color: string = 'yellow';
   val: any;
-  private studentName: string = '<b>Rajiv</b>';
+  studentName: string = '<b>Rajiv</b>';
   showDiv = false;
   price1 = 100;
   serviceText;
